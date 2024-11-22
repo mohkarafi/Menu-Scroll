@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Select Menu</title>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="selected" id="allsize">
+
+            <div id="Bare">
+                <p id="TextContenu">The Social Media</p>
+                <img src="SelectMenu_Img/arrow.png" id="arrowItem">
+            </div>
+
+            <!-- La liste des icônes des réseaux sociaux  -->
+
+            <ul id="list" class="hide">
+                <li class="objects">
+                    <img src="SelectMenu_Img/facebook.png" alt="">
+                    <p>Facebook</p>
+                </li>
+                <li class="objects">
+                    <img src="SelectMenu_Img/instagram.png" alt="">
+                    <p>instagram</p>
+                </li>
+                <li class="objects">
+                    <img src="SelectMenu_Img/pinterest.png" alt="">
+                    <p>pinterest</p>
+                </li>
+                <li class="objects">
+                    <img src="SelectMenu_Img/twitter.png" alt="">
+                    <p>X</p>
+                </li>
+                <li class="objects">
+                    <img src="SelectMenu_Img/youtube.png" alt="">
+                    <p>youtube</p>
+                </li>
+                <li class="objects">
+                    <img src="SelectMenu_Img/whatsapp.png" alt="">
+                    <p>whatsapp</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- le code js pour ajouter des clicks  -->
+    <script>
+        var TextBare = document.getElementById('TextContenu')
+        var objects = document.getElementsByClassName("objects")
+        var list = document.getElementById('list')
+        var arrowItem = document.getElementById('arrowItem')
+        var Bare = document.getElementById('Bare')
+
+        /* ajouter un click pour aficher et cacher la liste des icônes */
+        Bare.onclick = function () {
+            list.classList.toggle('hide')
+            arrowItem.classList.toggle('rotate')
+        }
+        /* Nous changeons le titre « Social Media Icons » avec le nom du réseau social qui Nous l'avons pressée*/
+
+
+        for (Object of objects) {
+            Object.onclick = function () {
+                TextBare.innerHTML = this.textContent;
+                list.classList.toggle('hide')
+            }
+        }
+    </script>
+</body>
+
+
+</html>
